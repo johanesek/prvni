@@ -8,10 +8,15 @@ while True:
     rw = RandomWalk()
     rw.fill_walk()
 
-    plt.scatter(rw.x_values, rw.y_values, s = 1)
+    point_numbers = list(range(rw.num_points))
+
+    plt.figure(figsize=(12,8))
+    plt.plot(rw.x_values, rw.y_values, linewidth=0.5)
+    plt.plot(0, 0, c='green', linewidth=0.5)
+    plt.plot(rw.x_values[-1], rw.y_values[-1], linewidth=0.5)
+
     plt.show()
 
     keep_running = input("Make another walk? (y/n): ")
     if keep_running == 'n':
         break
-#test git
